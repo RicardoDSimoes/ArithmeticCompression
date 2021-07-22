@@ -9,7 +9,8 @@ There are several types of compression modes, arithmetic compression it’s an l
 **Features**
 Possibility to insert an alphabet with the probability of occurrence of each symbol.
 Message insertion and compression of that message.
-After that, we can see all the process of compression, and we can descompression the result of the compression and receive the message again. All of this with the presentation of the all calculations.
+After that, we can see all the process of compression, and we can descompression the result of the compression and receive the message again. 
+All of this with the presentation of the all calculations.
 The project have an graphic interface developed with JavaFx.
 
 **To Do**
