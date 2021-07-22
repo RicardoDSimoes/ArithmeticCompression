@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="InitialPane" prefHeight="477.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codaritmetica.maincodaritmetica">
+  <children>
+    <TabPane layoutY="-1.0" prefHeight="478.0" prefWidth="671.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab fx:id="coditab" text="Codificaçao">
+          <content>
+            <AnchorPane fx:id="CodificacaoPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="668.0">
+              <children>
+                <TabPane fx:id="codTabPane" layoutX="1.0" prefHeight="445.0" prefWidth="671.0" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                    <Tab fx:id="alfaTab" text="Alfabeto">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="682.0">
+                          <children>
+                            <TableView fx:id="tablealfabeto" prefHeight="329.0" prefWidth="671.0">
+                              <columns>
+                                <TableColumn fx:id="sicol" prefWidth="184.0" text="si" />
+                                <TableColumn fx:id="picol" prefWidth="177.0" text="pi" />
+                                <TableColumn fx:id="subintcol" prefWidth="309.0" text="subintervalos(si)" />
+                              </columns>
+                            </TableView>
+                            <TextField fx:id="getSi" layoutX="14.0" layoutY="339.0" onAction="#buttonAdd" promptText="si" />
+                            <TextField fx:id="getPi" layoutX="213.0" layoutY="339.0" onAction="#buttonAdd" prefHeight="27.0" prefWidth="142.0" promptText="pi" />
+                            <Button fx:id="btn_add" layoutX="578.0" layoutY="339.0" mnemonicParsing="false" onAction="#buttonAdd" text="Add" />
+                            <Button fx:id="seguintebutton" layoutX="564.0" layoutY="372.0" mnemonicParsing="false" onAction="#seguinte" prefHeight="27.0" prefWidth="85.0" text="Seguinte" />
+                            <TextField fx:id="subinter" disable="true" editable="false" layoutX="390.0" layoutY="339.0" onAction="#buttonAdd" prefHeight="27.0" prefWidth="142.0" promptText="subintervalos" visible="false" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab fx:id="dadosacomprimirTab" text="Dados a Comprimir">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <Label layoutX="27.0" layoutY="146.0" prefHeight="30.0" prefWidth="145.0" text="Dados a Comprimir:" textAlignment="CENTER">
+                              <font>
+                                <Font name="System Bold" size="14.0" />
+                              </font>
+                            </Label>
+                            <TextField fx:id="dadosinseridos" layoutX="172.0" layoutY="148.0" prefHeight="27.0" prefWidth="194.0" />
+                            <Button fx:id="guardardados" layoutX="459.0" layoutY="146.0" mnemonicParsing="false" onAction="#guardardadospressed" prefHeight="31.0" prefWidth="92.0" text="Guardar" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab fx:id="codifiTab" text="Codificaçao">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <Button fx:id="seguirCod" layoutX="265.0" layoutY="40.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="92.0" text="Seguinte" />
+                            <Button fx:id="comecarCod" layoutX="14.0" layoutY="40.0" mnemonicParsing="false" onAction="#comecarCodifc" prefHeight="31.0" prefWidth="155.0" text="Comecar Codificaçao" />
+                            <Pane fx:id="paneCod" layoutX="10.0" layoutY="79.0" prefHeight="308.0" prefWidth="652.0">
+                              <children>
+                                <HBox fx:id="labelList" prefHeight="144.0" prefWidth="652.0">
+                                  <children>
+                                    <Pane fx:id="paneCode1" prefHeight="135.0" prefWidth="80.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="34.0" layoutY="55.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine1" layoutX="3.0" layoutY="1.0" prefHeight="27.0" prefWidth="69.0" />
+                                        <TextField fx:id="downLine1" layoutX="5.0" layoutY="95.0" prefHeight="27.0" prefWidth="69.0" />
+                                        <TextField fx:id="char1" layoutX="3.0" layoutY="45.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                    <Pane fx:id="paneCode2" prefHeight="144.0" prefWidth="117.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="49.0" layoutY="52.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine2" layoutX="12.0" layoutY="1.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="downLine2" layoutX="12.0" layoutY="95.0" prefHeight="27.0" prefWidth="88.0" />
+                                        <TextField fx:id="char2" layoutX="14.0" layoutY="46.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                    <Pane fx:id="paneCode3" prefHeight="144.0" prefWidth="117.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="49.0" layoutY="52.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine3" layoutX="12.0" layoutY="1.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="downLine3" layoutX="12.0" layoutY="95.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="char3" layoutX="17.0" layoutY="49.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                    <Pane fx:id="paneCode4" prefHeight="144.0" prefWidth="117.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="49.0" layoutY="52.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine4" layoutX="12.0" layoutY="1.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="downLine4" layoutX="12.0" layoutY="95.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="char4" layoutX="11.0" layoutY="51.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                    <Pane fx:id="paneCode5" prefHeight="144.0" prefWidth="117.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="49.0" layoutY="52.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine5" layoutX="12.0" layoutY="1.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="downLine5" layoutX="12.0" layoutY="95.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="char5" layoutX="14.0" layoutY="46.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                    <Pane fx:id="paneCode6" prefHeight="144.0" prefWidth="117.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="49.0" layoutY="52.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine6" layoutX="12.0" layoutY="1.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="downLine6" layoutX="12.0" layoutY="95.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="char6" layoutX="14.0" layoutY="46.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                  </children>
+                                </HBox>
+                                <HBox fx:id="labelList1" layoutY="154.0" prefHeight="144.0" prefWidth="652.0">
+                                  <children>
+                                    <Pane fx:id="paneCode7" prefHeight="135.0" prefWidth="80.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="34.0" layoutY="55.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine7" layoutX="5.0" layoutY="1.0" prefHeight="27.0" prefWidth="69.0" />
+                                        <TextField fx:id="downLine7" layoutX="5.0" layoutY="94.0" prefHeight="27.0" prefWidth="69.0" />
+                                        <TextField fx:id="char7" layoutX="5.0" layoutY="49.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                    <Pane fx:id="paneCode8" prefHeight="144.0" prefWidth="117.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="49.0" layoutY="52.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine8" layoutX="12.0" layoutY="1.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="downLine8" layoutX="12.0" layoutY="95.0" prefHeight="27.0" prefWidth="88.0" />
+                                        <TextField fx:id="char8" layoutX="12.0" layoutY="46.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                    <Pane fx:id="paneCode9" prefHeight="144.0" prefWidth="117.0" visible="false">
+                                      <children>
+                                        <TextField fx:id="upLine9" layoutX="12.0" layoutY="1.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <Line endX="9.0" endY="38.0" layoutX="49.0" layoutY="52.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="downLine9" layoutX="12.0" layoutY="95.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="char9" layoutX="14.0" layoutY="46.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                    <Pane fx:id="paneCode10" prefHeight="144.0" prefWidth="117.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="49.0" layoutY="52.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine10" layoutX="12.0" layoutY="1.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="downLine10" layoutX="12.0" layoutY="95.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="char10" layoutX="14.0" layoutY="46.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                    <Pane fx:id="paneCode11" prefHeight="144.0" prefWidth="117.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="49.0" layoutY="52.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine11" layoutX="12.0" layoutY="1.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="downLine11" layoutX="12.0" layoutY="95.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="char11" layoutX="14.0" layoutY="46.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                    <Pane fx:id="paneCode12" prefHeight="144.0" prefWidth="117.0" visible="false">
+                                      <children>
+                                        <Line endX="9.0" endY="38.0" layoutX="49.0" layoutY="52.0" startX="9.0" startY="-23.0" />
+                                        <TextField fx:id="upLine12" layoutX="12.0" layoutY="1.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="downLine12" layoutX="12.0" layoutY="95.0" prefHeight="27.0" prefWidth="92.0" />
+                                        <TextField fx:id="char12" layoutX="15.0" layoutY="43.0" prefHeight="27.0" prefWidth="32.0" />
+                                      </children>
+                                    </Pane>
+                                  </children>
+                                </HBox>
+                              </children>
+                            </Pane>
+                            <Pane fx:id="binaryPane" layoutX="389.0" layoutY="9.0" prefHeight="65.0" prefWidth="266.0" visible="false">
+                              <children>
+                                <Label layoutX="76.0" layoutY="14.0" prefHeight="17.0" prefWidth="94.0" text="Código Binário" textAlignment="CENTER" textFill="#f20000">
+                                  <font>
+                                    <Font name="System Bold" size="13.0" />
+                                  </font>
+                                </Label>
+                                <TextField fx:id="binaryCode" layoutX="40.0" layoutY="31.0" />
+                              </children>
+                            </Pane>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                  </tabs>
+                </TabPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Descodificaçao">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TabPane fx:id="descodPane" prefHeight="446.0" prefWidth="671.0" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                    <Tab fx:id="descodTab" text="Valor">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <Button id="convertToDecimal" fx:id="btn_decimal" layoutX="235.0" layoutY="142.0" mnemonicParsing="false" onAction="#decimalC" prefWidth="181.0" text="Converter para decimal" />
+                            <Label id="bin" fx:id="binaryCode2" layoutX="52.0" layoutY="145.0" prefWidth="127.0" text="" />
+                            <Label fx:id="decimalCode" layoutX="484.0" layoutY="147.0" prefWidth="127.0" text="" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab text="Descodificaçao">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <TableView fx:id="tabledescod" prefHeight="329.0" prefWidth="671.0">
+                              <columns>
+                                <TableColumn fx:id="sicoldescod" prefWidth="184.0" text="si" />
+                                <TableColumn fx:id="picoldescod" prefWidth="177.0" text="i" />
+                                <TableColumn fx:id="probcumdescod" prefWidth="309.0" text="PROBCUM i " />
+                              </columns>
+                            </TableView>
+                            <Button id="seguintebutton2" fx:id="descodificar" layoutX="430.0" layoutY="368.0" mnemonicParsing="false" onAction="#gerarTabela" prefHeight="27.0" prefWidth="85.0" text="Descodificar" />
+                                          <Label fx:id="saida" layoutX="536.0" layoutY="373.0" prefHeight="17.0" prefWidth="103.0" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                              <Tab text="Valores Descodificados">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox layoutX="286.0" layoutY="54.0" prefHeight="319.0" prefWidth="100.0">
+                                             <children>
+                                                <TextField fx:id="descodfield1" editable="false" visible="false" />
+                                                <TextField fx:id="descodfield2" editable="false" layoutX="10.0" layoutY="10.0" visible="false" />
+                                                <TextField fx:id="descodfield3" editable="false" layoutX="10.0" layoutY="37.0" visible="false" />
+                                                <TextField fx:id="descodfield4" editable="false" layoutX="10.0" layoutY="64.0" visible="false" />
+                                                <TextField fx:id="descodfield5" editable="false" layoutX="10.0" layoutY="91.0" visible="false" />
+                                                <TextField fx:id="descodfield6" editable="false" layoutX="10.0" layoutY="118.0" visible="false" />
+                                                <TextField fx:id="descodfield7" editable="false" layoutX="10.0" layoutY="145.0" visible="false" />
+                                                <TextField fx:id="descodfield8" editable="false" layoutX="10.0" layoutY="172.0" visible="false" />
+                                                <TextField fx:id="descodfield9" editable="false" layoutX="10.0" layoutY="199.0" visible="false" />
+                                                <TextField fx:id="descodfield10" editable="false" layoutX="10.0" layoutY="226.0" visible="false" />
+                                                <TextField fx:id="descodfield11" editable="false" layoutX="10.0" layoutY="253.0" visible="false" />
+                                                <TextField fx:id="descodfield12" editable="false" layoutX="10.0" layoutY="280.0" visible="false" />
+                                             </children>
+                                          </VBox>
+                                          <Button fx:id="button_descod" layoutX="51.0" layoutY="54.0" mnemonicParsing="false" onAction="#buttonDescod" text="Descodificar" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                  </tabs>
+                </TabPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>
